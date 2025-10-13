@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.special import gamma
 import io
 import time
-import lammps-logfile
+import lammps_logfile
 
 element_options = ['Au', 'Cu', 'Pt']
 temp_options = [3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
