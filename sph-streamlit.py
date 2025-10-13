@@ -54,6 +54,9 @@ legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper l
 ax.add_artist(legend1)
 ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right')
 
+ax.set_title('MSD vs time for different elements and temperatures')
+ax.set_xlabel('Time (ps)')
+ax.set_ylabel('MSD (A^2)')
 ax.grid(False)
 st.pyplot(fig)
 
