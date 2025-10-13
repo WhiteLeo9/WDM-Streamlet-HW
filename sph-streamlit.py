@@ -36,6 +36,12 @@ if selected_temps:
 fig, ax = plt.subplots()
 for element in selected_elements:
     for temp in selected_temps:
-        file_path=f'./{element}/{element}_{temp}K.log'
-        st.write(file_path)
+        file_path=f'./{element}/{element}-{temp}K.log'
+        log = lammps_logfile.File(file_path)
+        x = log.get("Time", run_num=2)
+        y = log.get("c_Msd[4]", run_num=2)
+        ax.plot(x, y)
+
+ax.grid(False)
+st.pyplot(fig)
 
