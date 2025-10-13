@@ -9,7 +9,7 @@ from matplotlib.lines import Line2D
 from matplotlib.ticker import AutoMinorLocator
 
 plt.rcParams['font.family'] = 'serif'
-n=10
+n=50
 
 element_options = ['Au', 'Cu', 'Pt']
 temp_options = ['3000', '4000', '5000', '6000', '7000', '8000', '9000', '10000']
