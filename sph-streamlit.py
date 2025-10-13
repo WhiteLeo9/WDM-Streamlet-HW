@@ -9,13 +9,13 @@ import lammps-logfile
 element_options = ['Au', 'Cu', 'Pt']
 temp_options = [3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
  
-st.title('Multiselect')
+st.title('Element select')
 
 # Multi-select dropdown
 selected_comps = st.multiselect(
-    'Select one or more compositions',
+    'Select one or more elements',
     options,
-    default=['Carbon']
+    default=['Au']
 )
 if selected_comps:
-    st.write(f'Selected compositions: {", ".join(selected_comps)}')
+    st.write(f'Selected elements: {", ".join(selected_comps)}')
