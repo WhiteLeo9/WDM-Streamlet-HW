@@ -37,5 +37,5 @@ fig, ax = plt.subplots()
 for element in selected_elements:
     for temp in selected_temps:
         file_path=f'./{element}/{element}_{temp}K.log'
-        st.write(file_name)
+        st.write(file_path)
 
