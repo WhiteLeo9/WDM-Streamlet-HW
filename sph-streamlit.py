@@ -9,10 +9,12 @@ from matplotlib.lines import Line2D
 from matplotlib.ticker import AutoMinorLocator
 
 plt.rcParams['font.family'] = 'serif'
+n=20
 
 element_options = ['Au', 'Cu', 'Pt']
 temp_options = ['3000', '4000', '5000', '6000', '7000', '8000', '9000', '10000']
 style_map = {'Au': '-', 'Cu': '--', 'Pt': ':'}
+marker_map = {'Au': 'o', 'Cu': 's', 'Pt': '^'}
 color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '6000': 'tab:red', '7000': 'tab:purple', '8000': 'tab:brown', '9000': 'tab:pink', '10000': 'tab:olive'}
  
 st.title('Element selection')
@@ -42,13 +44,23 @@ if selected_temps:
 st.title('MSD vs Time for Different Elements and Temperatures')
 
 fig, ax = plt.subplots()
+fig2, ax2 = plt.subplots()
 for element in selected_elements:
+    T = []
+    D = []
     for temp in selected_temps:
         file_path=f'./{element}/{element}-{temp}K.log'
         log = lammps_logfile.File(file_path)
         x = log.get("Time", run_num=1)
         y = log.get("c_Msd[4]", run_num=1)
+        coefficients = np.polyfit(x[-n:], y[-n:], 1)
+        slope = coefficients[0]
+        T.append(int(temp))
+        D.append(slope)
         ax.plot(x, y - y[0], linestyle=style_map[element], color=color_map[temp])
+    T_vs_D = zip(T, D)
+    T_vs_D_sorted = sorted(T_vs_D)
+    ax2.plot(T_vs_D_sorted[:, 0], T_vs_D_sorted[:, 1], linestyle=style_map[element], marker=marker_map[element])
 
 style_legend_elements = [Line2D([0], [0], color='black', lw=2, linestyle=style_map[el], label=el)
                          for el in selected_elements]
@@ -72,5 +84,6 @@ st.pyplot(fig)
 
 
 st.title('Diffusion Coefficient vs Temperaure for Different Elements')
+st.pyplot(fig2)
 
 
