@@ -56,8 +56,8 @@ legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper l
 ax.add_artist(legend1)
 ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right')
 
-ax.set_xlabel('Time (ps)', fontsize=16)
-ax.set_ylabel('MSD (A^2)', fontsize=16)
+ax.set_xlabel('Time ($ps$)', fontsize=16)
+ax.set_ylabel('MSD ($A^{2}$)', fontsize=16)
 ax.grid(False)
 ax.xaxis.set_minor_locator(AutoMinorLocator())
 ax.yaxis.set_minor_locator(AutoMinorLocator())
