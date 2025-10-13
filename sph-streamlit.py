@@ -35,5 +35,5 @@ if selected_temps:
 
 fig, ax = plt.subplots()
 for element in selected_elements:
-    print(element)
+    st.print(element)
 
