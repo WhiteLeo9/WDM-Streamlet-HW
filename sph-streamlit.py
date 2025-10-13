@@ -59,7 +59,7 @@ for element in selected_elements:
         D.append(slope)
         ax.plot(x, y - y[0], linestyle=style_map[element], color=color_map[temp])
     T_vs_D = zip(T, D)
-    T_vs_D_sorted = sorted(T_vs_D)
+    T_vs_D_sorted = np.array(sorted(T_vs_D))
     ax2.plot(T_vs_D_sorted[:, 0], T_vs_D_sorted[:, 1], linestyle=style_map[element], marker=marker_map[element])
 
 style_legend_elements = [Line2D([0], [0], color='black', lw=2, linestyle=style_map[el], label=el)
