@@ -43,8 +43,8 @@ fig, ax = plt.subplots()
 #        ax.plot(x, y)
 
 log = lammps_logfile.File('./Au/Au-3000K.log')
-x = log.get("Time", run_num=2)
-y = log.get("c_Msd[4]", run_num=2)
+x = log.get("Time", run_num=1)
+y = log.get("c_Msd[4]", run_num=1)
 ax.plot(x, y)
 
 ax.grid(False)
