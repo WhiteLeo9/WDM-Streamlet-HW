@@ -70,3 +70,7 @@ for spine in ax.spines.values():
     spine.set_linewidth(2)
 st.pyplot(fig)
 
+
+st.title('Diffusion Coefficient vs Temperaure for Different Elements')
+
+
