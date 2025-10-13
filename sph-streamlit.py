@@ -36,6 +36,6 @@ if selected_temps:
 fig, ax = plt.subplots()
 for element in selected_elements:
     for temp in selected_temps:
-        file_name=f'{element}_{temp}K.log'
+        file_path=f'./{element}/{element}_{temp}K.log'
         st.write(file_name)
 
