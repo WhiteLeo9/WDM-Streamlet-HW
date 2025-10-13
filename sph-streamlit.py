@@ -39,6 +39,8 @@ if selected_temps:
     st.write(f'Selected temperatures: {", ".join(selected_temps)}')
 
 
+st.title('MSD vs Time for Different Elements and Temperatures')
+
 fig, ax = plt.subplots()
 for element in selected_elements:
     for temp in selected_temps:
