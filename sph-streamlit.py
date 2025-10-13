@@ -40,7 +40,7 @@ for element in selected_elements:
         log = lammps_logfile.File(file_path)
         x = log.get("Time", run_num=1)
         y = log.get("c_Msd[4]", run_num=1)
-        ax.plot(x, y - y[0])
+        ax.plot(x, y)
 
 
 ax.grid(False)
