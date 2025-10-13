@@ -14,7 +14,7 @@ st.title('Element select')
 # Multi-select dropdown
 selected_comps = st.multiselect(
     'Select one or more elements',
-    options,
+    element_options,
     default=['Au']
 )
 if selected_comps:
