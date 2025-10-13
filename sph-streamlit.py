@@ -31,3 +31,9 @@ selected_temps = st.multiselect(
 )
 if selected_temps:
     st.write(f'Selected temperatures: {", ".join(selected_temps)}')
+
+
+fig, ax = plt.subplots()
+for element in selected_elements:
+    print(element)
+
