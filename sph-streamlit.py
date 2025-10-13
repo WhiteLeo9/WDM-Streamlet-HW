@@ -62,7 +62,9 @@ ax.set_ylabel('MSD (A^2)')
 ax.grid(False)
 ax.xaxis.set_minor_locator(AutoMinorLocator())
 ax.yaxis.set_minor_locator(AutoMinorLocator())
-ax.tick_params(which='minor', top=True, right=True, length=4, direction='out')
-ax.tick_params(which='major', length=7, top=True, right=True, direction='out')
+ax.tick_params(which='minor', top=True, right=True, length=2, direction='out')
+ax.tick_params(which='major', length=4, top=True, right=True, direction='out')
+for spine in ax.spines.values():
+    spine.set_linewidth(2)
 st.pyplot(fig)
 
