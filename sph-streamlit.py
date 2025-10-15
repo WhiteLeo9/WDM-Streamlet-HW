@@ -19,7 +19,7 @@ color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '600
  
 st.set_page_config(page_title="MSD and Diffusion Coefficient", layout="centered")
 
-st.title("Mean Square Displacement (MSD) and Diffusion Coefficient")
+st.title("Mean Square Displacement and Diffusion Coefficient")
 
 st.subheader("Mean Square Displacement")
 
@@ -86,7 +86,7 @@ if selected_temps:
     st.write(f'Selected temperatures: {", ".join(selected_temps)}')
 
 
-st.header('MSD vs Time for Different Elements and Temperatures')
+st.subheader('MSD vs Time for Different Elements and Temperatures')
 
 width=14/2.54
 height=10/2.54
@@ -130,7 +130,7 @@ for spine in ax.spines.values():
 st.pyplot(fig)
 
 
-st.header('Diffusion Coefficient vs Temperaure for Different Elements')
+st.subheader('Diffusion Coefficient vs Temperaure for Different Elements')
 
 ax2.set_xlabel('Temperature ($K$)', fontsize=16)
 ax2.set_ylabel('Diffusion coefficient ($A^{2}/ps$)', fontsize=16)
