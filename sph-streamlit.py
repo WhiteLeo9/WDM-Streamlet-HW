@@ -61,8 +61,13 @@ This relation assumes purely diffusive motion, where ballistic effects are negli
 
 st.info("💡 Tip: We can calculate the diffusion coefficient by fitting MSD vs. time data from molecular dynamics simulations.")
 
+st.markdown("---")
 
-st.header('Element selection')
+st.subheader("Plotting MSD and Diffusion coefficient")
+
+st.markdown("""
+In this application, we have MSD vs time data for three different elements: gold (Au), platinum (Pt), and copper (Cu). Thereby, we can see how the MSD or diffusion coefficient varies with respect to temperature and element-wise. Please select the elements and temperatures from the following drop-down menus so it will plot the MSD vs Time and Diffusion coefficient vs Temperature. 
+""")
 
 # Element select dropdown
 selected_elements = st.multiselect(
@@ -73,8 +78,6 @@ selected_elements = st.multiselect(
 if selected_elements:
     st.write(f'Selected elements: {", ".join(selected_elements)}')
 
-
-st.header('Temperature selection')
 
 # Temp select dropdown
 selected_temps = st.multiselect(
