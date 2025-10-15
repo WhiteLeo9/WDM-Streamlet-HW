@@ -17,6 +17,49 @@ style_map = {'Au': '-', 'Cu': '--', 'Pt': ':'}
 marker_map = {'Au': 'o', 'Cu': 's', 'Pt': '^'}
 color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '6000': 'tab:red', '7000': 'tab:purple', '8000': 'tab:brown', '9000': 'tab:pink', '10000': 'tab:olive'}
  
+st.set_page_config(page_title="MSD and Diffusion Coefficient", layout="centered")
+
+st.title("📈 Mean Square Displacement (MSD) and Diffusion Coefficient")
+
+st.markdown("""
+The **Mean Square Displacement (MSD)** quantifies how far, on average, a particle moves from its initial position over time.
+""")
+
+st.latex(r"""
+\langle r^2(t) \rangle = \left\langle \left[ \mathbf{r}(t) - \mathbf{r}(0) \right]^2 \right\rangle
+""")
+
+st.markdown("""
+where the angle brackets $\\langle \\cdot \\rangle$ denote an ensemble average over all particles or time origins.
+""")
+
+st.markdown("---")
+
+st.subheader("Diffusion Coefficient")
+
+st.markdown("""
+In three dimensions, the **diffusion coefficient** $D$ is related to the long-time behavior of the MSD through the Einstein relation:
+""")
+
+st.latex(r"""
+D = \lim_{t \to \infty} \frac{\langle r^2(t) \rangle}{6t}
+""")
+
+st.markdown("""
+For motion in $d$ dimensions, the general form is:
+""")
+
+st.latex(r"""
+D = \lim_{t \to \infty} \frac{\langle r^2(t) \rangle}{2 d t}
+""")
+
+st.markdown("""
+This relation assumes purely diffusive motion, where ballistic effects are negligible at long times.
+""")
+
+st.info("💡 Tip: You can calculate the diffusion coefficient by fitting MSD vs. time data from your molecular dynamics simulations.")
+
+
 st.header('Element selection')
 
 # Element select dropdown
@@ -56,9 +99,9 @@ for element in selected_elements:
         x = log.get("Time", run_num=1)
         y = log.get("c_Msd[4]", run_num=1)
         coefficients = np.polyfit(x[-n:], y[-n:], 1)
-        slope = coefficients[0]
+        diff = coefficients[0]/6
         T.append(int(temp))
-        D.append(slope)
+        D.append(diff)
         ax.plot(x, y - y[0], linestyle=style_map[element], color=color_map[temp])
     T_vs_D = zip(T, D)
     T_vs_D_sorted = np.array(sorted(T_vs_D))
