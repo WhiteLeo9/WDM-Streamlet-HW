@@ -97,7 +97,7 @@ if selected_temps:
 st.subheader('MSD vs Time for Different Elements and Temperatures')
 
 width=14/2.54
-height=10/2.54
+height=12/2.54
 fig, ax = plt.subplots(figsize=(width, height))
 fig2, ax2 = plt.subplots(figsize=(width, height))
 for element in selected_elements:
