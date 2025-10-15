@@ -43,8 +43,8 @@ if selected_temps:
 
 st.title('MSD vs Time for Different Elements and Temperatures')
 
-fig, ax = plt.subplots()
-fig2, ax2 = plt.subplots()
+fig, ax = plt.subplots(figsize=(20/2.54, 16/2.54))
+fig2, ax2 = plt.subplots(figsize=(20/2.54, 16/2.54))
 for element in selected_elements:
     T = []
     D = []
@@ -84,6 +84,16 @@ st.pyplot(fig)
 
 
 st.title('Diffusion Coefficient vs Temperaure for Different Elements')
+
+ax2.set_xlabel('Temperature ($K$)', fontsize=16)
+ax2.set_ylabel('Diffusion coefficient ($A^{2}/ps$)', fontsize=16)
+ax2.grid(False)
+ax2.xaxis.set_minor_locator(AutoMinorLocator())
+ax2.yaxis.set_minor_locator(AutoMinorLocator())
+ax2.tick_params(which='minor', top=True, right=True, length=2, direction='out', labelsize=14, width=1.0)
+ax2.tick_params(which='major', length=4, top=True, right=True, direction='out', labelsize=14, width=1.5)
+for spine in ax2.spines.values():
+    spine.set_linewidth(2)
 st.pyplot(fig2)
 
 
