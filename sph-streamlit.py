@@ -19,7 +19,9 @@ color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '600
  
 st.set_page_config(page_title="MSD and Diffusion Coefficient", layout="centered")
 
-st.title("📈 Mean Square Displacement (MSD) and Diffusion Coefficient")
+st.title("📈 Mean Square Displacement and Diffusion Coefficient")
+
+st.subheader("Mean Square Displacement")
 
 st.markdown("""
 The **Mean Square Displacement (MSD)** quantifies how far, on average, a particle moves from its initial position over time.
