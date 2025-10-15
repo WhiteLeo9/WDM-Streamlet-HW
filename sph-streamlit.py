@@ -66,7 +66,8 @@ st.markdown("---")
 st.subheader("Plotting MSD and Diffusion coefficient")
 
 st.markdown("""
-In this application, we have MSD vs time data for three different elements: gold (Au), platinum (Pt), and copper (Cu). Thereby, we can see how the MSD or diffusion coefficient varies with respect to temperature and element-wise. Please select the elements and temperatures from the following drop-down menus so it will plot the MSD vs Time and Diffusion coefficient vs Temperature. 
+In this application, we analyze Mean Square Displacement (MSD) data as a function of time for three elements: Gold (Au), Platinum (Pt), and Copper (Cu).
+By exploring these datasets, we can observe how the MSD and the corresponding diffusion coefficients vary with temperature and between different elements.
 """)
 
 # Element select dropdown
