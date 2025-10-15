@@ -57,7 +57,7 @@ st.markdown("""
 This relation assumes purely diffusive motion, where ballistic effects are negligible at long times.
 """)
 
-st.info("💡 Tip: You can calculate the diffusion coefficient by fitting MSD vs. time data from your molecular dynamics simulations.")
+st.info("💡 Tip: We can calculate the diffusion coefficient by fitting MSD vs. time data from molecular dynamics simulations.")
 
 
 st.header('Element selection')
