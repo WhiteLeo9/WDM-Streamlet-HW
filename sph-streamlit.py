@@ -127,10 +127,10 @@ ax.add_artist(legend1)
 legend2 = ax.legend(handles=style_legend_elements, title="Element", loc='upper center', fontsize=5, title_fontsize=6)
 
 frame1 = legend1.get_frame()
-frame1.set_linewidth(0.5)
+frame1.set_linewidth(0.2)
 
 frame2 = legend2.get_frame()
-frame2.set_linewidth(0.5)
+frame2.set_linewidth(0.2)
 
 ax.set_xlabel('Time ($ps$)', fontsize=10)
 ax.set_ylabel('MSD ($A^{2}$)', fontsize=10)
