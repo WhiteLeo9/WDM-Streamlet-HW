@@ -164,3 +164,19 @@ st.pyplot(fig2)
 st.markdown("---")
 
 st.subheader("Discussion")
+
+st.markdown("""
+As can be seen from the Diffusion coefficient (D) vs temperature graph, D increases almost linearly with the temperature for all the elements considered.
+This is expected, as the Einstein relation states that diffusion is linearly proportional to temperature.
+""")
+
+st.markdown("""
+Comparing the diffusion of Au, Pt, and Cu, Pt and Au seem to follow similar trends with temperature. 
+This can be due to Pt and Au being next to each other in the periodic table, having quite similar molar masses. 
+However, Cu diffuses faster than Pt and Au when the temperature increases. This is because Cu is a lighter element compared to Pt and Au.
+""")
+
+st.markdown("""
+For Cu, literature provides D = 0.52 $A^{2}/ps$ at 1620 K [PRB 81, 012102 (2010)]. The present study reports D = ~0.2 $A^{2}/ps$ at 3000 K. This is not quite a good agreement.
+The reason behind this could be that the interatomic potential used in the present study is not capable of predicting the diffusive properties of the material, especially at such higher temperatures.
+""")
