@@ -70,6 +70,10 @@ In this application, we analyze Mean Square Displacement (MSD) data as a functio
 By exploring these datasets, we can observe how the MSD and the corresponding diffusion coefficients vary with temperature and between different elements.
 """)
 
+st.markdown("""
+Use the drop-down menus below to select an element and temperature, and the app will display the corresponding MSD vs. Time and Diffusion Coefficient vs. Temperature plots.
+""")
+
 # Element select dropdown
 selected_elements = st.multiselect(
     'Select one or more elements',
