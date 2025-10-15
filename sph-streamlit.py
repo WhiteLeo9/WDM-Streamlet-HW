@@ -146,15 +146,19 @@ st.pyplot(fig)
 
 st.subheader('Diffusion Coefficient vs Temperaure for Different Elements')
 
-ax2.set_xlabel('Temperature ($K$)', fontsize=16)
-ax2.set_ylabel('Diffusion coefficient ($A^{2}/ps$)', fontsize=16)
+legend3 = ax2.legend(handles=style_legend_elements, title="Element", loc='upper left', fontsize=5, title_fontsize=6)
+frame3 = legend3.get_frame()
+frame3.set_linewidth(0.2)
+
+ax2.set_xlabel('Temperature ($K$)', fontsize=10)
+ax2.set_ylabel('Diffusion coefficient ($A^{2}/ps$)', fontsize=10)
 ax2.grid(False)
 ax2.xaxis.set_minor_locator(AutoMinorLocator())
 ax2.yaxis.set_minor_locator(AutoMinorLocator())
-ax2.tick_params(which='minor', top=True, right=True, length=2, direction='out', labelsize=14, width=1.0)
-ax2.tick_params(which='major', length=4, top=True, right=True, direction='out', labelsize=14, width=1.5)
+ax2.tick_params(which='minor', top=True, right=True, length=1, direction='out', labelsize=8, width=0.5)
+ax2.tick_params(which='major', length=2, top=True, right=True, direction='out', labelsize=8, width=0.8)
 for spine in ax2.spines.values():
-    spine.set_linewidth(2)
+    spine.set_linewidth(0.8)
 st.pyplot(fig2)
 
 st.markdown("---")
