@@ -112,14 +112,14 @@ for element in selected_elements:
         diff = coefficients[0]/6
         T.append(int(temp))
         D.append(diff)
-        ax.plot(x, y - y[0], linestyle=style_map[element], color=color_map[temp])
+        ax.plot(x, y - y[0], linestyle=style_map[element], color=color_map[temp], linewidth=0.5)
     T_vs_D = zip(T, D)
     T_vs_D_sorted = np.array(sorted(T_vs_D))
-    ax2.plot(T_vs_D_sorted[:, 0], T_vs_D_sorted[:, 1], linestyle=style_map[element], marker=marker_map[element])
+    ax2.plot(T_vs_D_sorted[:, 0], T_vs_D_sorted[:, 1], linestyle=style_map[element], marker=marker_map[element], linewidth=0.5)
 
-style_legend_elements = [Line2D([0], [0], color='black', lw=1, linestyle=style_map[el], label=el)
+style_legend_elements = [Line2D([0], [0], color='black', lw=0.5, linestyle=style_map[el], label=el)
                          for el in selected_elements]
-color_legend_elements = [Line2D([0], [0], color=color_map[t], lw=1, label=f'{t} K')
+color_legend_elements = [Line2D([0], [0], color=color_map[t], lw=0.5, label=f'{t} K')
                          for t in selected_temps]
 
 legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper left', fontsize=5, title_fontsize=6)
