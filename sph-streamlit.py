@@ -19,10 +19,7 @@ color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '600
  
 st.set_page_config(page_title="MSD and Diffusion Coefficient", layout="centered")
 
-st.markdown(
-    "<h1 style='text-align: center;'>📈 Mean Square Displacement (MSD) and Diffusion Coefficient</h1>",
-    unsafe_allow_html=True
-)
+st.title("Mean Square Displacement (MSD) and Diffusion Coefficient")
 
 st.subheader("Mean Square Displacement")
 
