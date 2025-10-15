@@ -96,8 +96,8 @@ if selected_temps:
 
 st.subheader('MSD vs Time for Different Elements and Temperatures')
 
-width=14/2.54
-height=12/2.54
+width=8/2.54
+height=6/2.54
 fig, ax = plt.subplots(figsize=(width, height))
 fig2, ax2 = plt.subplots(figsize=(width, height))
 for element in selected_elements:
@@ -126,15 +126,15 @@ legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper l
 ax.add_artist(legend1)
 ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right')
 
-ax.set_xlabel('Time ($ps$)', fontsize=16)
-ax.set_ylabel('MSD ($A^{2}$)', fontsize=16)
+ax.set_xlabel('Time ($ps$)', fontsize=10)
+ax.set_ylabel('MSD ($A^{2}$)', fontsize=10)
 ax.grid(False)
 ax.xaxis.set_minor_locator(AutoMinorLocator())
 ax.yaxis.set_minor_locator(AutoMinorLocator())
-ax.tick_params(which='minor', top=True, right=True, length=2, direction='out', labelsize=14, width=1.0)
-ax.tick_params(which='major', length=4, top=True, right=True, direction='out', labelsize=14, width=1.5)
+ax.tick_params(which='minor', top=True, right=True, length=2, direction='out', labelsize=8, width=1.0)
+ax.tick_params(which='major', length=4, top=True, right=True, direction='out', labelsize=8, width=1.5)
 for spine in ax.spines.values():
-    spine.set_linewidth(2)
+    spine.set_linewidth(1.5)
 st.pyplot(fig)
 
 
