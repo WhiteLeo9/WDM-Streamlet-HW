@@ -17,7 +17,7 @@ style_map = {'Au': '-', 'Cu': '--', 'Pt': ':'}
 marker_map = {'Au': 'o', 'Cu': 's', 'Pt': '^'}
 color_map = {'3000': 'tab:blue', '4000': 'tab:orange', '5000': 'tab:green', '6000': 'tab:red', '7000': 'tab:purple', '8000': 'tab:brown', '9000': 'tab:pink', '10000': 'tab:olive'}
  
-st.title('Element selection')
+st.header('Element selection')
 
 # Element select dropdown
 selected_elements = st.multiselect(
@@ -29,7 +29,7 @@ if selected_elements:
     st.write(f'Selected elements: {", ".join(selected_elements)}')
 
 
-st.title('Temperature selection')
+st.header('Temperature selection')
 
 # Temp select dropdown
 selected_temps = st.multiselect(
@@ -41,7 +41,7 @@ if selected_temps:
     st.write(f'Selected temperatures: {", ".join(selected_temps)}')
 
 
-st.title('MSD vs Time for Different Elements and Temperatures')
+st.header('MSD vs Time for Different Elements and Temperatures')
 
 width=14/2.54
 height=10/2.54
@@ -85,7 +85,7 @@ for spine in ax.spines.values():
 st.pyplot(fig)
 
 
-st.title('Diffusion Coefficient vs Temperaure for Different Elements')
+st.header('Diffusion Coefficient vs Temperaure for Different Elements')
 
 ax2.set_xlabel('Temperature ($K$)', fontsize=16)
 ax2.set_ylabel('Diffusion coefficient ($A^{2}/ps$)', fontsize=16)
