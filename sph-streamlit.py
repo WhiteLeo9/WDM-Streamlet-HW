@@ -122,9 +122,9 @@ style_legend_elements = [Line2D([0], [0], color='black', lw=0.5, linestyle=style
 color_legend_elements = [Line2D([0], [0], color=color_map[t], lw=0.5, label=f'{t} K')
                          for t in selected_temps]
 
-legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper left', fontsize=5, title_fontsize=6)
+legend1 = ax.legend(handles=color_legend_elements, title="Temperature", loc='upper left', fontsize=5, title_fontsize=6)
 ax.add_artist(legend1)
-ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right', fontsize=5, title_fontsize=6)
+ax.legend(handles=style_legend_elements, title="Element", loc='upper center', fontsize=5, title_fontsize=6)
 
 ax.set_xlabel('Time ($ps$)', fontsize=10)
 ax.set_ylabel('MSD ($A^{2}$)', fontsize=10)
