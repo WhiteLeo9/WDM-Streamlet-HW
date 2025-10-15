@@ -88,7 +88,7 @@ if selected_elements:
 selected_temps = st.multiselect(
     'Select one or more temperatures',
     temp_options,
-    default=['3000']
+    default=['3000', '6000', '10000']
 )
 if selected_temps:
     st.write(f'Selected temperatures: {", ".join(selected_temps)}')
