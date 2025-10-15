@@ -157,4 +157,6 @@ for spine in ax2.spines.values():
     spine.set_linewidth(2)
 st.pyplot(fig2)
 
+st.markdown("---")
 
+st.subheader("Discussion")
