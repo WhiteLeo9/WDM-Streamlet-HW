@@ -117,14 +117,14 @@ for element in selected_elements:
     T_vs_D_sorted = np.array(sorted(T_vs_D))
     ax2.plot(T_vs_D_sorted[:, 0], T_vs_D_sorted[:, 1], linestyle=style_map[element], marker=marker_map[element])
 
-style_legend_elements = [Line2D([0], [0], color='black', lw=2, linestyle=style_map[el], label=el)
+style_legend_elements = [Line2D([0], [0], color='black', lw=1, linestyle=style_map[el], label=el)
                          for el in selected_elements]
-color_legend_elements = [Line2D([0], [0], color=color_map[t], lw=2, label=f'{t} K')
+color_legend_elements = [Line2D([0], [0], color=color_map[t], lw=1, label=f'{t} K')
                          for t in selected_temps]
 
-legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper left')
+legend1 = ax.legend(handles=style_legend_elements, title="Element", loc='upper left', fontsize=7, title_fontsize=8)
 ax.add_artist(legend1)
-ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right')
+ax.legend(handles=color_legend_elements, title="Temperature", loc='lower right', fontsize=7, title_fontsize=8)
 
 ax.set_xlabel('Time ($ps$)', fontsize=10)
 ax.set_ylabel('MSD ($A^{2}$)', fontsize=10)
